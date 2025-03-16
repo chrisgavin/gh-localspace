@@ -1,13 +1,12 @@
 module github.com/chrisgavin/gh-localspace
 
 go 1.24.1
-
 require (
 	github.com/adhocore/jsonc v0.10.0
 	github.com/adrg/xdg v0.5.3
 	github.com/cli/go-gh v1.2.1
 	github.com/cli/go-gh/v2 v2.11.2
-	github.com/evanphx/json-patch v0.5.2
+	github.com/evanphx/json-patch v5.9.11+incompatible
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.9.1
