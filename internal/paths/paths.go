@@ -15,7 +15,7 @@ func SpecificationPath(name string) string {
 }
 
 func DevcontainersPath() string {
-	return filepath.Join(xdg.DataHome, "Code", "User", "globalStorage", "ms-vscode-remote.remote-containers", "configs")
+	return filepath.Join(xdg.ConfigHome, "Code", "User", "globalStorage", "ms-vscode-remote.remote-containers", "configs")
 }
 
 func DevcontainerPath(name string) string {
