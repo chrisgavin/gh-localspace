@@ -1,0 +1,10 @@
+on:
+  pull_request: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot-automerge:
+    uses: chrisgavin/workflows/.github/workflows/dependabot-automerge.yaml@ec72e4764f186c1ea95076b867a122575ba0bde2
