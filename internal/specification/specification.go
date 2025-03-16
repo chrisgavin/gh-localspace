@@ -3,6 +3,7 @@ package specification
 import jsonpatch "github.com/evanphx/json-patch"
 
 type Specification struct {
+	Name                 string          `json:"name"`
 	Repository           string          `json:"repository"`
 	Base                 string          `json:"base"`
 	Root                 string          `json:"root"`

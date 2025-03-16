@@ -66,6 +66,10 @@ func registerRefreshCommand(rootCommand *RootCommand) {
 				return errors.Wrapf(err, "error reading devcontainer configuration from %s", inputDevcontainerPath)
 			}
 
+			if specification.Name != "" {
+				devcontainerConfiguration["name"] = specification.Name
+			}
+
 			if devcontainerConfiguration["containerEnv"] == nil {
 				devcontainerConfiguration["containerEnv"] = make(map[string]any)
 			}
