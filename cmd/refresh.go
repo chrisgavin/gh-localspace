@@ -89,6 +89,15 @@ func registerRefreshCommand(rootCommand *RootCommand) {
 				return errors.New("containerEnv is not valid")
 			}
 
+			if devcontainerConfiguration["mounts"] == nil {
+				devcontainerConfiguration["mounts"] = make([]any, 0)
+			}
+			if mounts, ok := devcontainerConfiguration["mounts"].([]any); ok {
+				devcontainerConfiguration["mounts"] = append(mounts, "source="+specificationPath+",target=/usr/local/share/gh-localspace/specification/,type=bind,readonly")
+			} else {
+				return errors.New("mounts is not valid")
+			}
+
 			outputDevcontainerDirectoryPath := filepath.Join(stagingDirectory, ".devcontainer")
 			if err := os.MkdirAll(outputDevcontainerDirectoryPath, 0755); err != nil {
 				return errors.Wrapf(err, "error creating output devcontainer directory %s", outputDevcontainerDirectoryPath)
