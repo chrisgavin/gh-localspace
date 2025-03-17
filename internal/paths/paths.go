@@ -11,7 +11,7 @@ func SpecificationsPath() string {
 }
 
 func SpecificationPath(name string) string {
-	return filepath.Join(SpecificationsPath(), name+".json")
+	return filepath.Join(SpecificationsPath(), name, "specification.json")
 }
 
 func DevcontainersPath() string {
