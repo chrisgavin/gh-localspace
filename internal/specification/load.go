@@ -6,7 +6,9 @@ import (
 )
 
 func Load(path string) (*Specification, error) {
-	specification := &Specification{}
+	specification := &Specification{
+		Base: ".devcontainer/devcontainer.json",
+	}
 	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
